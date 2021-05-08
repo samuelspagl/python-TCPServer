@@ -1,6 +1,10 @@
-from lib.messages.colors import Colors
-from lib.globalVars import GlobalVariables
+from .colors import Colors
+import config as config
+#************************************************************
+#                    The Message Class
+#************************************************************
 
+#This class is basicly just a prefab for messages that shall have a unique style.
 class Msg:
 
     def warning(input):
@@ -10,7 +14,7 @@ class Msg:
         print(Colors.error + input + Colors.reset)
 
     def debug(input):
-        if(GlobalVariables.debug):
+        if(config.debug):
             print(Colors.fg.lightgrey + input + Colors.reset)
 
     def tcp(input):
